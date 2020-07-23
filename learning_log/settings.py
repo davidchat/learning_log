@@ -37,6 +37,7 @@ INSTALLED_APPS = [
 
     # Third party apps
     'bootstrap4',
+    'crispy_forms',
 
     # Default django apps
     'django.contrib.admin',
@@ -126,6 +127,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # My settings
 LOGIN_URL = 'users:login'
