@@ -1,5 +1,6 @@
 {% extends "learning_logs/base.html" %}
-{% load bootstrap4 %}
+
+{% load crispy_forms_tags %}
 
 {% block page_header %}
 	<h3>Log in to your account.</h3>
@@ -8,10 +9,9 @@
 {% block content %}
 	<form method="post" action="{% url 'users:login' %}" class="form">
 		{% csrf_token %}
-		{% bootstrap_form form %}
-		{% buttons %}
+		{{ form|crispy }}
+		
 			<button name="submit" class="btn btn-primary">Log in</button>
-		{% endbuttons %}
 
 		<input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
 	</form>
