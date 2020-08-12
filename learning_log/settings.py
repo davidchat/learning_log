@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'dyg4+9vmd7s&q_-r=qfr!18@a8%_v4y1hbo72h7zn%m)m398e2'
+SECRET_KEY = os.environ.get('learning_notepad_secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     # Third party apps
     'bootstrap4',
     'crispy_forms',
+    'ckeditor',
 
     # Default django apps
     'django.contrib.admin',
@@ -129,6 +130,19 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+CKEDITOR_CONFIGS = {
+   'default': {
+       'toolbar_Full': [
+            ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+            ['Bold', 'Italic', 'Underline'],
+            ['TextColor', 'BGColor'],
+            ['Smiley', 'SpecialChar'],
+            ['NumberedList','BulletedList'],
+        ],
+        'extraPlugins': 'justify,liststyle,indent',
+   },
+}
 
 # My settings
 LOGIN_URL = 'users:login'

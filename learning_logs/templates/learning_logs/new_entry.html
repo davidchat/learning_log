@@ -1,5 +1,5 @@
 {% extends "learning_logs/base.html" %}
-{% load bootstrap4 %}
+{% load crispy_forms_tags %}
 
 {% block page_header %}
 	<h3><a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a></h3>
@@ -9,9 +9,8 @@
 {% block content %}
 	<form method="post" action="{% url 'learning_logs:new_entry' topic.id %}" class="form">
 		{% csrf_token %}
-		{% bootstrap_form form %}
-		{% buttons %}
-			<button name="submit" class="btn btn-primary">Add entry</button>
-		{% endbuttons %}
+		{{ form.media }}
+		{{ form|crispy }}
+		<button name="submit" class="btn btn-primary">Add entry</button>
 	</form>
 {% endblock content %}
