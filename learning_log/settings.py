@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('learning_notepad_secret_key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['198.199.66.8', 'learningnotepad.com',]
 
 
 # Application definition
