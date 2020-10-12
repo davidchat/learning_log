@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('learning_notepad_secret_key')
+SECRET_KEY = os.environ.get('LN_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -163,11 +163,11 @@ CKEDITOR_CONFIGS = {
 # My settings
 LOGIN_URL = 'users:login'
 
-# Heroku settings
-import django_heroku
-django_heroku.settings(locals())
+# # Heroku settings
+# import django_heroku
+# django_heroku.settings(locals())
 
-if os.environ.get('DEBUG') == 'TRUE':
-    DEBUG = True
-elif os.environ.get('DEBUG') == 'FALSE':
-    DEBUG = False
+# if os.environ.get('DEBUG') == 'TRUE':
+#     DEBUG = True
+# elif os.environ.get('DEBUG') == 'FALSE':
+#     DEBUG = False
