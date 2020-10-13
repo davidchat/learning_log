@@ -145,7 +145,7 @@ if DEBUG:
         os.path.join(BASE_DIR, 'static')
     ]
 else:
-    STATIC_ROOT = '/var/www/learningnotepad.com/static/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
