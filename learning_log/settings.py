@@ -27,7 +27,7 @@ SECRET_KEY = config('LN_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['198.199.66.8', '.learningnotepad.com',]
+ALLOWED_HOSTS = ['learningnotepad.com', 'www.learningnotepad.com']
 
 
 # Application definition
